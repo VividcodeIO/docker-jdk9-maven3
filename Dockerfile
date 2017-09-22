@@ -1,11 +1,9 @@
 FROM buildpack-deps:sid-scm
 
-ARG JAVA_BUILD_NUM=176
-
 ENV LANG C.UTF-8
 ENV JAVA_HOME /jdk-9
 
-RUN curl -o /tmp/jdk.tar.gz http://download.java.net/java/jdk9/archive/${JAVA_BUILD_NUM}/binaries/jdk-9+${JAVA_BUILD_NUM}_linux-x64_bin.tar.gz
+RUN curl -o /tmp/jdk.tar.gz http://download.java.net/java/GA/jdk9/9/binaries/jdk-9+181_linux-x64_bin.tar.gz
 RUN tar -xvzf /tmp/jdk.tar.gz -C /
 RUN ln -s $JAVA_HOME/bin/java /usr/bin/java
 
